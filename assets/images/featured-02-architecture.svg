@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="t2">
+  <title id="t2">프로젝트 B 아키텍처 다이어그램 플레이스홀더</title>
+  <defs>
+    <pattern id="g2" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.2" fill="#ff6b9d" opacity="0.25"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="480" fill="#f3f8ff"/>
+  <rect width="960" height="480" fill="url(#g2)"/>
+  <rect x="280" y="160" width="400" height="160" rx="16" fill="#ffffff" stroke="#5ecdc0" stroke-width="2" opacity="0.95"/>
+  <text x="480" y="248" text-anchor="middle" fill="#8b7499" font-family="JetBrains Mono, monospace" font-size="18">Diagram placeholder — replace</text>
+</svg>

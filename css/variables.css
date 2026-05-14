@@ -1,0 +1,32 @@
+:root {
+  /* 밝고 파스텔 톤 · 포인트는 핑크 + 민트 */
+  --color-bg: #fff5f9;
+  --color-bg-2: #f3f8ff;
+  --color-surface: #ffffff;
+  --color-surface-warm: #fffbfc;
+  --color-border: #f3d5e8;
+  --color-border-strong: #ebc4dc;
+  --color-text: #4a3558;
+  --color-text-muted: #8b7499;
+  --color-accent: #ff6b9d;
+  --color-accent-hover: #e84a86;
+  --color-accent-soft: #ffe8f1;
+  --color-mint: #5ecdc0;
+  --color-mint-soft: #dff8f4;
+  --color-lilac: #b8a9ff;
+  --color-lilac-soft: #ede9ff;
+  --color-sun: #ffd666;
+  /* 액센트 배경 위 텍스트 */
+  --color-on-accent: #ffffff;
+
+  --font-main: 'Noto Sans KR', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius: 16px;
+  --radius-sm: 12px;
+  --transition: 0.28s cubic-bezier(0.34, 1.2, 0.64, 1);
+
+  --shadow-sm: 0 4px 16px rgba(255, 107, 157, 0.12);
+  --shadow-md: 0 10px 32px rgba(255, 107, 157, 0.14);
+  --shadow-float: 0 12px 36px rgba(94, 205, 192, 0.18);
+}

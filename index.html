@@ -1,0 +1,1274 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#fff5f9" />
+  <title>김가연 | Backend Developer Portfolio</title>
+  <meta
+    name="description"
+    content="Spring Boot·Java·AWS 기반 백엔드 개발자 김가연의 포트폴리오입니다. API 설계, 인프라, 트러블슈팅 및 프로젝트 경험을 소개합니다."
+  />
+  <meta name="robots" content="index, follow" />
+  <!-- TODO: 수정 필요 — 실제 배포 도메인으로 canonical·OG URL·og:image 절대 경로를 바꾸세요 -->
+  <link rel="canonical" href="https://example.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="김가연 | Backend Developer Portfolio" />
+  <meta
+    property="og:description"
+    content="Spring Boot·Java·AWS 기반 백엔드 개발자 김가연의 포트폴리오입니다. API 설계, 인프라, 트러블슈팅 및 프로젝트 경험을 소개합니다."
+  />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:site_name" content="김가연 Portfolio" />
+  <meta property="og:image" content="https://example.com/og-image.png" />
+  <meta property="og:image:alt" content="김가연 Backend Developer 포트폴리오 대표 이미지" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://example.com/og-image.png" />
+  <meta name="twitter:title" content="김가연 | Backend Developer Portfolio" />
+  <meta
+    name="twitter:description"
+    content="Spring Boot·Java·AWS 기반 백엔드 개발자 김가연의 포트폴리오입니다. API 설계, 인프라, 트러블슈팅 및 프로젝트 경험을 소개합니다."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Google Fonts: URL에 display=swap 포함 (FOIT 완화) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/variables.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <nav class="nav container" id="site-nav" aria-label="주요 섹션 이동">
+      <!-- TODO: 수정 필요 -->
+      <a href="#hero" class="brand mono" aria-label="홈(맨 위)으로 이동">DEVNAME.log</a>
+
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        type="button"
+        aria-label="메뉴 열기"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu" id="nav-menu">
+        <a href="#about" data-nav-link aria-label="About Me 섹션으로 이동">About</a>
+        <a href="#skills" data-nav-link aria-label="Tech Stack 섹션으로 이동">Skills</a>
+        <a href="#featured-projects" data-nav-link aria-label="Featured Projects 섹션으로 이동">Featured</a>
+        <a href="#other-projects" data-nav-link aria-label="Other Projects 섹션으로 이동">Other</a>
+        <a href="#trouble-shooting" data-nav-link aria-label="Trouble Shooting 섹션으로 이동">Troubleshooting</a>
+        <a href="#architecture" data-nav-link aria-label="Architecture 섹션으로 이동">Architecture</a>
+        <a href="#blog-github" data-nav-link aria-label="Blog 및 GitHub 섹션으로 이동">Blog &amp; GitHub</a>
+        <a href="#contact" data-nav-link aria-label="Contact 섹션으로 이동">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero section" aria-labelledby="hero-title">
+      <div class="hero__backdrop" aria-hidden="true"></div>
+
+      <div class="hero__inner container">
+        <!-- TODO: 수정 필요 -->
+        <p class="hero__label mono hero-animate" style="--hero-order: 0">Backend Developer</p>
+        <!-- TODO: 수정 필요 -->
+        <h1 id="hero-title" class="hero__title hero-animate" style="--hero-order: 1">김가연</h1>
+        <p class="hero__tagline hero-animate" style="--hero-order: 2">
+          서비스 운영까지 고려하는 백엔드 개발자
+        </p>
+        <ul class="hero__tags hero-animate" style="--hero-order: 3" aria-label="주요 기술 스택">
+          <li><span class="hero-tag">Java</span></li>
+          <li><span class="hero-tag">Spring Boot</span></li>
+          <li><span class="hero-tag">AWS</span></li>
+          <li><span class="hero-tag">Docker</span></li>
+        </ul>
+        <div class="hero__cta hero-animate" style="--hero-order: 4">
+          <a
+            class="hero-btn hero-btn--outline"
+            href="https://github.com/8330000e"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub 프로필 열기"
+          >
+            GitHub 방문하기
+          </a>
+          <a
+            class="hero-btn hero-btn--filled"
+            href="./resume.pdf"
+            download
+            aria-label="이력서 PDF 파일 다운로드"
+          >
+            이력서 다운로드
+          </a>
+        </div>
+      </div>
+
+      <a href="#about" class="hero__scroll-btn" aria-label="About 섹션으로 스크롤">
+        <span class="hero-animate hero__scroll-inner" style="--hero-order: 5">
+          <span class="hero__scroll-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 5v14M5 13l7 7 7-7"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </span>
+      </a>
+    </section>
+
+    <section id="about" class="about section" aria-labelledby="about-heading">
+      <div class="container about__grid">
+        <div class="about__media">
+          <div class="about__avatar-placeholder" role="img" aria-label="프로필 사진 영역">
+            <span class="about__avatar-initial mono" aria-hidden="true">ㄱㅏ</span>
+          </div>
+        </div>
+        <div class="about__content">
+          <h2 id="about-heading" class="about__title">About Me</h2>
+
+          <!-- TODO: 수정 필요 -->
+          <div class="about__intro">
+            <p>
+              안녕하세요. 사용자와 서비스 관점에서 안정적인 백엔드를 만드는 것에 관심을 두고 있는 개발자입니다.
+            </p>
+            <p>
+              Java와 Spring 생태계를 중심으로 API 설계부터 배포까지 전 과정을 학습했으며,
+              장애 대응과 운영을 고려한 코드 작성을 지향합니다.
+            </p>
+            <p>
+              앞으로는 팀과 협업하며 테스트·모니터링·인프라 경험을 넓히고,
+              읽기 좋은 아키텍처로 비즈니스 가치를 돕고 싶습니다.
+            </p>
+          </div>
+
+          <ul class="about__facts">
+            <li class="about__fact">
+              <span class="about__fact-icon about__fact-icon--school" aria-hidden="true"></span>
+              <span><span class="about__fact-label">학교</span> 경인여자대학교</span>
+            </li>
+            <li class="about__fact">
+              <span class="about__fact-icon about__fact-icon--major" aria-hidden="true"></span>
+              <span><span class="about__fact-label">전공</span> 소프트웨어융합학과</span>
+            </li>
+            <li class="about__fact">
+              <span class="about__fact-icon about__fact-icon--interest" aria-hidden="true"></span>
+              <span><span class="about__fact-label">관심 분야</span> 풀스택웹개발</span>
+            </li>
+            <li class="about__fact">
+              <span class="about__fact-icon about__fact-icon--mail" aria-hidden="true"></span>
+              <span><span class="about__fact-label">이메일</span></span>
+              <a
+                href="mailto:gyn38k@gmail.com"
+                class="about__fact-link"
+                aria-label="이메일 gyn38k@gmail.com 보내기"
+              >
+                gyn38k@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills section" aria-labelledby="skills-heading">
+      <div class="container">
+        <!-- TODO: 수정 필요 -->
+        <h2 id="skills-heading" class="skills__heading">Tech Stack</h2>
+
+        <div class="skills__grid">
+          <article class="skill-card">
+            <h3 class="skill-card__title">Backend</h3>
+            <ul class="skill-card__tags">
+              <li><span class="skill-tag">Java</span></li>
+              <li><span class="skill-tag">Spring Boot</span></li>
+              <li><span class="skill-tag">JPA/Hibernate</span></li>
+            </ul>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-card__title">Infra</h3>
+            <ul class="skill-card__tags">
+              <li><span class="skill-tag">Docker</span></li>
+              <li><span class="skill-tag">AWS EC2</span></li>
+              <li><span class="skill-tag">AWS S3</span></li>
+              <li><span class="skill-tag">AWS RDS</span></li>
+              <li><span class="skill-tag">AWS CloudFront</span></li>
+            </ul>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-card__title">Database</h3>
+            <ul class="skill-card__tags">
+              <li>
+                <span class="skill-tag skill-tag--with-badge">
+                  MySQL
+                  <span class="skill-badge skill-badge--main">Main</span>
+                </span>
+              </li>
+              <li>
+                <span class="skill-tag skill-tag--with-badge">
+                  Oracle
+                  <span class="skill-badge skill-badge--experience">Experience</span>
+                </span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-card__title">Collaboration</h3>
+            <ul class="skill-card__tags">
+              <li><span class="skill-tag">Git/GitHub</span></li>
+              <li><span class="skill-tag">Notion</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured-projects" class="featured section" aria-labelledby="featured-heading">
+      <div class="container">
+        <h2 id="featured-heading" class="featured__title">Featured Projects</h2>
+
+        <!-- TODO: 수정 필요 -->
+        <div class="featured__cards">
+          <article class="featured-card" id="featured-project-1" aria-labelledby="fp1-title">
+            <header class="featured-card__head">
+              <div class="featured-card__head-main">
+                <h3 id="fp1-title" class="featured-card__name">프로젝트 A</h3>
+                <p class="featured-card__meta">
+                  <span class="featured-card__period">2024.01 – 2024.06</span>
+                  <span class="featured-card__meta-sep" aria-hidden="true">·</span>
+                  <span class="featured-card__team">팀 프로젝트</span>
+                </p>
+              </div>
+              <div class="featured-card__actions">
+                <a
+                  class="featured-card__btn featured-card__btn--ghost"
+                  href="https://github.com/8330000e"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="프로젝트 A GitHub 저장소 열기"
+                >
+                  GitHub
+                </a>
+                <a
+                  class="featured-card__btn featured-card__btn--accent"
+                  href="https://example.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="프로젝트 A 배포 사이트 열기"
+                >
+                  배포 링크
+                </a>
+              </div>
+            </header>
+
+            <div class="featured-card__body">
+              <p class="featured-card__lede">
+                예약·결제 병목을 줄이기 위한 백엔드 API와 운영 자동화를 구축한 서비스입니다.
+              </p>
+              <ul class="featured-card__stack" aria-label="사용 기술">
+                <li><span class="featured-card__tag">Java</span></li>
+                <li><span class="featured-card__tag">Spring Boot</span></li>
+                <li><span class="featured-card__tag">MySQL</span></li>
+                <li><span class="featured-card__tag">AWS</span></li>
+              </ul>
+              <ul class="featured-card__bullets">
+                <li>인증·권한 분리 및 세션/토큰 정책 적용</li>
+                <li>주문·재고 도메인 트랜잭션 설계</li>
+                <li>배포 파이프라인 및 로그·모니터링 연동</li>
+                <li>부하 테스트 기반 설정 튜닝</li>
+              </ul>
+
+              <!-- TODO: 수정 필요 -->
+              <figure class="featured-card__diagram">
+                <img
+                  class="featured-card__diagram-img"
+                  src="./assets/images/featured-01-architecture.svg"
+                  width="960"
+                  height="480"
+                  alt="프로젝트 A 아키텍처 다이어그램"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="featured-card__diagram-cap">Architecture</figcaption>
+              </figure>
+            </div>
+
+            <footer class="featured-card__foot">
+              <h4 class="featured-card__subheading">내가 해결한 문제</h4>
+              <div class="featured-card__solve">
+                <div class="featured-card__solve-block">
+                  <p class="featured-card__solve-label">문제 상황</p>
+                  <p class="featured-card__solve-text">
+                    트래픽 증가 시 DB 커넥션 고갈과 응답 지연이 반복 발생했습니다.
+                  </p>
+                </div>
+                <div class="featured-card__solve-block">
+                  <p class="featured-card__solve-label">접근 방법</p>
+                  <p class="featured-card__solve-text">
+                    커넥션 풀·쿼리 튜닝·캐시 전략을 단계적으로 적용하고 부하 테스트로 검증했습니다.
+                  </p>
+                </div>
+                <div class="featured-card__solve-block">
+                  <p class="featured-card__solve-label">결과</p>
+                  <p class="featured-card__solve-text">
+                    피크 시간대 평균 응답 시간을 목표치 이하로 낮추고 장애 알림까지 연결했습니다.
+                  </p>
+                </div>
+              </div>
+              <h4 class="featured-card__subheading featured-card__subheading--spaced">기술 선택 이유</h4>
+              <p class="featured-card__rationale">
+                운영·확장에 익숙한 Spring 생태계를 선택해 팀 온보딩과 레퍼런스 확보 비용을 줄였습니다.
+                인프라는 비용 대비 안정적인 AWS 서비스 조합으로 구성했습니다.
+              </p>
+            </footer>
+          </article>
+
+          <!-- TODO: 수정 필요 -->
+          <article class="featured-card" id="featured-project-2" aria-labelledby="fp2-title">
+            <header class="featured-card__head">
+              <div class="featured-card__head-main">
+                <h3 id="fp2-title" class="featured-card__name">프로젝트 B</h3>
+                <p class="featured-card__meta">
+                  <span class="featured-card__period">2023.09 – 2023.12</span>
+                  <span class="featured-card__meta-sep" aria-hidden="true">·</span>
+                  <span class="featured-card__team">개인 프로젝트</span>
+                </p>
+              </div>
+              <div class="featured-card__actions">
+                <a
+                  class="featured-card__btn featured-card__btn--ghost"
+                  href="https://github.com/8330000e"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="프로젝트 B GitHub 저장소 열기"
+                >
+                  GitHub
+                </a>
+                <a
+                  class="featured-card__btn featured-card__btn--accent"
+                  href="https://example.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="프로젝트 B 배포 사이트 열기"
+                >
+                  배포 링크
+                </a>
+              </div>
+            </header>
+
+            <div class="featured-card__body">
+              <p class="featured-card__lede">
+                학습 목적의 풀스택 앱으로, 사용자 요청을 신속히 처리하는 API를 제공합니다.
+              </p>
+              <ul class="featured-card__stack" aria-label="사용 기술">
+                <li><span class="featured-card__tag">Spring Boot</span></li>
+                <li><span class="featured-card__tag">JPA</span></li>
+                <li><span class="featured-card__tag">Docker</span></li>
+                <li><span class="featured-card__tag">MySQL</span></li>
+              </ul>
+              <ul class="featured-card__bullets">
+                <li>JWT 기반 인증 및 사용자 CRUD API</li>
+                <li>도커 Compose로 로컬·배포 환경 통일</li>
+                <li>Github Actions 빌드·배포 자동화</li>
+              </ul>
+              <!-- TODO: 수정 필요 -->
+              <figure class="featured-card__diagram">
+                <img
+                  class="featured-card__diagram-img"
+                  src="./assets/images/featured-02-architecture.svg"
+                  width="960"
+                  height="480"
+                  alt="프로젝트 B 아키텍처 다이어그램"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="featured-card__diagram-cap">Architecture</figcaption>
+              </figure>
+            </div>
+
+            <footer class="featured-card__foot">
+              <h4 class="featured-card__subheading">내가 해결한 문제</h4>
+              <div class="featured-card__solve">
+                <div class="featured-card__solve-block">
+                  <p class="featured-card__solve-label">문제 상황</p>
+                  <p class="featured-card__solve-text">
+                    로컬과 운영 환경 차이로 배포 후 설정 오류가 자주 발생했습니다.
+                  </p>
+                </div>
+                <div class="featured-card__solve-block">
+                  <p class="featured-card__solve-label">접근 방법</p>
+                  <p class="featured-card__solve-text">
+                    환경 변수 분리와 Docker 이미지 기준 배포 파이프라인을 도입했습니다.
+                  </p>
+                </div>
+                <div class="featured-card__solve-block">
+                  <p class="featured-card__solve-label">결과</p>
+                  <p class="featured-card__solve-text">
+                    재현 가능한 배포로 장애 원인 분석 시간을 줄였습니다.
+                  </p>
+                </div>
+              </div>
+              <h4 class="featured-card__subheading featured-card__subheading--spaced">기술 선택 이유</h4>
+              <p class="featured-card__rationale">
+                JPA와 Spring의 관례를 활용해 도메인 모델을 빠르게 확장하고, 컨테이너화로 배포 일관성을 확보했습니다.
+              </p>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="other-projects" class="other section" aria-labelledby="other-heading">
+      <div class="container">
+        <h2 id="other-heading" class="other__title">Other Projects</h2>
+
+        <!-- TODO: 수정 필요 -->
+        <div class="other__grid">
+          <article class="other-card">
+            <h3 class="other-card__name">프로젝트 C</h3>
+            <p class="other-card__desc">REST API 클라이언트 연동 및 예외 처리 실습 프로젝트입니다.</p>
+            <p class="other-card__meta">
+              <span>2024.07 – 2024.08</span>
+              <span class="other-card__meta-sep" aria-hidden="true">·</span>
+              <span>개인</span>
+            </p>
+            <ul class="other-card__tags" aria-label="기술 스택">
+              <li><span class="other-tag">Java</span></li>
+              <li><span class="other-tag">Spring Boot</span></li>
+              <li><span class="other-tag">MySQL</span></li>
+            </ul>
+            <div class="other-card__links">
+              <a
+                class="other-icon-btn"
+                href="https://github.com/8330000e"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub 저장소 (프로젝트 C)"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.71.5.1.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.54 2.34 1.1 2.91.84.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="other-icon-btn"
+                href="https://example.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="배포 사이트 (프로젝트 C)"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="other-card">
+            <h3 class="other-card__name">프로젝트 D</h3>
+            <p class="other-card__desc">간단한 CRUD와 인증을 포함한 웹 서비스입니다.</p>
+            <p class="other-card__meta">
+              <span>2023.05 – 2023.07</span>
+              <span class="other-card__meta-sep" aria-hidden="true">·</span>
+              <span>팀</span>
+            </p>
+            <ul class="other-card__tags" aria-label="기술 스택">
+              <li><span class="other-tag">Docker</span></li>
+              <li><span class="other-tag">AWS EC2</span></li>
+              <li><span class="other-tag">JPA</span></li>
+              <li><span class="other-tag">MariaDB</span></li>
+            </ul>
+            <div class="other-card__links">
+              <a
+                class="other-icon-btn"
+                href="https://github.com/8330000e"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub 저장소 (프로젝트 D)"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.71.5.1.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.54 2.34 1.1 2.91.84.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="other-icon-btn"
+                href="https://example.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="배포 사이트 (프로젝트 D)"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="trouble-shooting" class="section extra-section ts-section" aria-labelledby="ts-heading">
+      <div class="container">
+        <h2 id="ts-heading" class="ts-section__title">Trouble Shooting</h2>
+        <p class="ts-section__subtitle">개발 과정에서 직접 해결한 문제들</p>
+
+        <div class="ts-accordion" id="ts-accordion">
+          <!-- TODO: 수정 필요 -->
+          <div class="ts-accordion__item">
+            <button
+              type="button"
+              class="ts-accordion__trigger"
+              id="ts-acc-btn-1"
+              aria-expanded="false"
+              aria-controls="ts-acc-panel-1"
+            >
+              <span class="ts-accordion__badge mono" aria-hidden="true">DB</span>
+              <span class="ts-accordion__head-main">
+                <span class="ts-accordion__head-title">JPA N+1 문제 해결</span>
+                <span class="ts-accordion__tech" aria-label="관련 기술">
+                  <span class="ts-accordion__chip">JPA</span>
+                  <span class="ts-accordion__chip">Spring Data</span>
+                  <span class="ts-accordion__chip">JPQL</span>
+                </span>
+              </span>
+              <span class="ts-accordion__chevron" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+            <div
+              id="ts-acc-panel-1"
+              class="ts-accordion__panel"
+              role="region"
+              aria-labelledby="ts-acc-btn-1"
+              hidden
+            >
+              <div class="ts-accordion__body">
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">문제 상황</p>
+                  <p class="ts-accordion__copy">
+                    리스트 조회 시 연관 엔티티가 개수만큼 추가 쿼리가 발생해 응답 시간이 길어졌습니다. (예시 텍스트)
+                  </p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">원인 분석</p>
+                  <p class="ts-accordion__copy">기본 fetch 전략(LAZY)에서 컬렉션 접근 시마다 추가 SELECT가 발생했습니다.</p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">해결 방법</p>
+                  <p class="ts-accordion__copy">
+                    <code class="mono">@EntityGraph</code> 또는 fetch join으로 한 번에 조회하거나, 배치 크기 설정으로 IN 쿼리를 묶었습니다.
+                  </p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">결과 / 배운 점</p>
+                  <p class="ts-accordion__copy">
+                    불필요한 쿼리 수가 줄어 목표 응답 시간을 맞출 수 있었고, 앞으로 목록 전용 조회와 DTO 투영을 분리할 필요성을 깨달았습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ts-accordion__item">
+            <button
+              type="button"
+              class="ts-accordion__trigger"
+              id="ts-acc-btn-2"
+              aria-expanded="false"
+              aria-controls="ts-acc-panel-2"
+            >
+              <span class="ts-accordion__badge mono" aria-hidden="true">배포</span>
+              <span class="ts-accordion__head-main">
+                <span class="ts-accordion__head-title">Docker 컨테이너 메모리 이슈</span>
+                <span class="ts-accordion__tech" aria-label="관련 기술">
+                  <span class="ts-accordion__chip">Docker</span>
+                  <span class="ts-accordion__chip">JVM</span>
+                  <span class="ts-accordion__chip">Linux</span>
+                </span>
+              </span>
+              <span class="ts-accordion__chevron" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+            <div
+              id="ts-acc-panel-2"
+              class="ts-accordion__panel"
+              role="region"
+              aria-labelledby="ts-acc-btn-2"
+              hidden
+            >
+              <div class="ts-accordion__body">
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">문제 상황</p>
+                  <p class="ts-accordion__copy">
+                    배포 후 컨테이너가 간헐적으로 재시작되거나 OOM으로 종료되었습니다.
+                  </p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">원인 분석</p>
+                  <p class="ts-accordion__copy">
+                    컨테너 할당 메모리 대비 JVM 힙 설정이 과하고, 피크 시 RSS가 한계를 넘었습니다.
+                  </p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">해결 방법</p>
+                  <p class="ts-accordion__copy">
+                    Docker 메모리 제한과 힙/메타공간 플래그를 정렬했고 필요 시 배치 크기·캐시 상한도 조정했습니다.
+                  </p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">결과 / 배운 점</p>
+                  <p class="ts-accordion__copy">
+                    안정적인 가동 시간을 확보했고 운영 환경에서 리소스 캡과 JVM 옵션을 함께 설계해야 한다고 정리했습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ts-accordion__item">
+            <button
+              type="button"
+              class="ts-accordion__trigger"
+              id="ts-acc-btn-3"
+              aria-expanded="false"
+              aria-controls="ts-acc-panel-3"
+            >
+              <span class="ts-accordion__badge mono" aria-hidden="true">AWS</span>
+              <span class="ts-accordion__head-main">
+                <span class="ts-accordion__head-title">CloudFront 캐싱 정책 설정 오류</span>
+                <span class="ts-accordion__tech" aria-label="관련 기술">
+                  <span class="ts-accordion__chip">CloudFront</span>
+                  <span class="ts-accordion__chip">S3</span>
+                  <span class="ts-accordion__chip">CDN</span>
+                </span>
+              </span>
+              <span class="ts-accordion__chevron" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+            <div
+              id="ts-acc-panel-3"
+              class="ts-accordion__panel"
+              role="region"
+              aria-labelledby="ts-acc-btn-3"
+              hidden
+            >
+              <div class="ts-accordion__body">
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">문제 상황</p>
+                  <p class="ts-accordion__copy">배포 직후에도 사용자 화면에 이전 버전 에셋이 보이거나 404가 섞였습니다.</p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">원인 분석</p>
+                  <p class="ts-accordion__copy">TTL과 Origin 설정이 맞지 않거나 캐시 무효화가 누락되어 오래된 객체가 제공되었습니다.</p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">해결 방법</p>
+                  <p class="ts-accordion__copy">
+                    캐시 키·헤더를 정리하고 무효화 경로를 자동화하거나 버전 접두어(Cache busting)를 적용했습니다.
+                  </p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">결과 / 배운 점</p>
+                  <p class="ts-accordion__copy">정적 리소스 배포 플로우와 CDN 무효화를 문서로 남기는 게 팀 속도에 도움이 된다고 느꼈습니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ts-accordion__item">
+            <button
+              type="button"
+              class="ts-accordion__trigger"
+              id="ts-acc-btn-4"
+              aria-expanded="false"
+              aria-controls="ts-acc-panel-4"
+            >
+              <span class="ts-accordion__badge mono" aria-hidden="true">보안</span>
+              <span class="ts-accordion__head-main">
+                <span class="ts-accordion__head-title">JWT 토큰 만료 처리 로직</span>
+                <span class="ts-accordion__tech" aria-label="관련 기술">
+                  <span class="ts-accordion__chip">JWT</span>
+                  <span class="ts-accordion__chip">Spring Security</span>
+                  <span class="ts-accordion__chip">Refresh Token</span>
+                </span>
+              </span>
+              <span class="ts-accordion__chevron" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+            <div
+              id="ts-acc-panel-4"
+              class="ts-accordion__panel"
+              role="region"
+              aria-labelledby="ts-acc-btn-4"
+              hidden
+            >
+              <div class="ts-accordion__body">
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">문제 상황</p>
+                  <p class="ts-accordion__copy">액세스 토큰 만료 후 예상치 않은 401 연속 발생 또는 무한 리프레시가 보고되었습니다.</p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">원인 분석</p>
+                  <p class="ts-accordion__copy">
+                    클라이언트 재요청 타이밍과 서버 검증 순서가 엇갈렸고, 리프레시 토큰 재발급 정책이 일관되지 않았습니다.
+                  </p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">해결 방법</p>
+                  <p class="ts-accordion__copy">
+                    만료·블랙리스트·단일 디바이스 정책 등을 명확히 하고 재발급 API와 예외 처리 흐름을 정리했습니다.
+                  </p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">결과 / 배운 점</p>
+                  <p class="ts-accordion__copy">인증은 API 스펙뿐 아니라 클라이언트 동선까지 포함해 설계해야 한다는 점을 배웠습니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ts-accordion__item">
+            <button
+              type="button"
+              class="ts-accordion__trigger"
+              id="ts-acc-btn-5"
+              aria-expanded="false"
+              aria-controls="ts-acc-panel-5"
+            >
+              <span class="ts-accordion__badge mono" aria-hidden="true">성능</span>
+              <span class="ts-accordion__head-main">
+                <span class="ts-accordion__head-title">API 응답속도 개선 (인덱스 최적화)</span>
+                <span class="ts-accordion__tech" aria-label="관련 기술">
+                  <span class="ts-accordion__chip">MySQL</span>
+                  <span class="ts-accordion__chip">EXPLAIN</span>
+                  <span class="ts-accordion__chip">인덱스</span>
+                </span>
+              </span>
+              <span class="ts-accordion__chevron" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+            <div
+              id="ts-acc-panel-5"
+              class="ts-accordion__panel"
+              role="region"
+              aria-labelledby="ts-acc-btn-5"
+              hidden
+            >
+              <div class="ts-accordion__body">
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">문제 상황</p>
+                  <p class="ts-accordion__copy">특정 필터 조합에서 목록 API 평균 지연이 임계치를 초과했습니다.</p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">원인 분석</p>
+                  <p class="ts-accordion__copy">조건 컬럼에 적절한 복합 인덱스가 없어 풀 스캔에 가까운 플랜이 선택되었습니다.</p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">해결 방법</p>
+                  <p class="ts-accordion__copy">
+                    EXPLAIN으로 플랜을 확인 후 정렬·필터 순서에 맞는 인덱스를 추가하고, 불필요한 SELECT 컬럼을 줄였습니다.
+                  </p>
+                </div>
+                <div class="ts-accordion__block">
+                  <p class="ts-accordion__label">결과 / 배운 점</p>
+                  <p class="ts-accordion__copy">기능 추가 시 쿼리 플랜 리뷰를 습관화하면 회귀를 줄일 수 있다고 정리했습니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section extra-section arch-section" aria-labelledby="arch-heading">
+      <div class="container">
+        <h2 id="arch-heading" class="arch-section__title">Architecture</h2>
+        <p class="arch-section__subtitle">직접 구성한 AWS 인프라 구조</p>
+
+        <!-- TODO: 수정 필요 -->
+        <figure class="arch-diagram" role="group" aria-label="AWS 인프라 흐름도">
+          <div class="arch-diagram__inner">
+            <div class="arch-tier arch-tier--single">
+              <div class="arch-node arch-node--plain">
+                <span class="arch-node__icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2" />
+                    <path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <span class="arch-node__name mono">User / Browser</span>
+                <span class="arch-node__desc">웹 클라이언트에서 서비스 접속</span>
+              </div>
+            </div>
+
+            <div class="arch-connector arch-connector--labeled" aria-hidden="true">
+              <div class="arch-arrow arch-arrow--down"></div>
+              <span class="arch-connector__label mono">HTTPS</span>
+            </div>
+
+            <div class="arch-tier arch-tier--single">
+              <div class="arch-node arch-node--aws">
+                <span class="arch-node__icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                    <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" stroke="currentColor" stroke-width="2" />
+                  </svg>
+                </span>
+                <span class="arch-node__name mono">CloudFront (CDN)</span>
+                <span class="arch-node__desc">엣지에서 정적 자산 전달·API 경로 분기</span>
+              </div>
+            </div>
+
+            <div class="arch-fork" aria-hidden="true">
+              <span class="arch-fork__stem"></span>
+              <span class="arch-fork__bar"></span>
+              <span class="arch-fork__leg arch-fork__leg--left"></span>
+              <span class="arch-fork__leg arch-fork__leg--right"></span>
+            </div>
+
+            <div class="arch-branch">
+              <div class="arch-branch__col">
+                <div class="arch-connector" aria-hidden="true">
+                  <div class="arch-arrow arch-arrow--down arch-arrow--compact"></div>
+                </div>
+                <div class="arch-node arch-node--aws">
+                  <span class="arch-node__icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="2" />
+                      <path d="M8 11h8M8 15h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                  <span class="arch-node__name mono">S3 (React)</span>
+                  <span class="arch-node__desc">빌드 산출물 호스팅·버전별 정적 배포</span>
+                </div>
+              </div>
+
+              <div class="arch-branch__col">
+                <div class="arch-connector" aria-hidden="true">
+                  <div class="arch-arrow arch-arrow--down arch-arrow--compact"></div>
+                </div>
+                <div class="arch-node arch-node--aws">
+                  <span class="arch-node__icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="4" y="4" width="16" height="6" rx="1" stroke="currentColor" stroke-width="2" />
+                      <rect x="4" y="14" width="16" height="6" rx="1" stroke="currentColor" stroke-width="2" />
+                      <path d="M9 10v4M15 10v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                  <span class="arch-node__name mono">EC2 (Spring Boot)</span>
+                  <span class="arch-node__desc">Docker 기반 API·비즈니스 로직 처리</span>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <div class="arch-arrow arch-arrow--down arch-arrow--compact"></div>
+                </div>
+                <div class="arch-node arch-node--aws">
+                  <span class="arch-node__icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="12" cy="6" rx="7" ry="3" stroke="currentColor" stroke-width="2" />
+                      <path d="M5 6v6c0 1.657 3.134 3 7 3s7-1.343 7-3V6" stroke="currentColor" stroke-width="2" />
+                      <path d="M5 12v0c0 1.657 3.134 3 7 3s7-1.343 7-3v0" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                  </span>
+                  <span class="arch-node__name mono">RDS (MySQL)</span>
+                  <span class="arch-node__desc">트랜잭션 데이터 영구 저장·백업 정책</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption class="arch-diagram__cap mono">HTML/CSS only · flow diagram</figcaption>
+        </figure>
+
+        <div class="arch-summary">
+          <p class="arch-summary__text">
+            사용자 요청은 HTTPS로 CloudFront에 도달하고, 정적 UI는 S3 오리진에서 캐시·전송됩니다.
+            API 트래픽은 동일 엣지를 통해 EC2의 Spring Boot로 프록시되며, 영속 데이터는 RDS MySQL에서 관리합니다.
+            비용·지연·운영 편의를 균형 있게 맞추기 위해 CDN·오브젝트 스토리지·관리형 DB 조합을 선택했습니다.
+          </p>
+          <p class="arch-docker">
+            <span class="arch-docker__badge mono">Docker</span>
+            <span class="arch-docker__text">
+              API는 Docker 이미지로 패키징해 EC2에서 동일한 런타임으로 기동·스케일하며, 배포 재현성과 롤백 속도를 높였습니다.
+            </span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog-github" class="section extra-section links-section" aria-labelledby="blog-heading">
+      <div class="container">
+        <h2 id="blog-heading" class="links-section__title">Blog &amp; GitHub</h2>
+
+        <div class="links-section__grid">
+          <!-- TODO: 수정 필요 -->
+          <div class="links-section__panel">
+            <h3 class="links-section__panel-title mono">Blog</h3>
+            <ul class="links-section__list links-section__list--blog">
+              <li>
+                <article class="blog-card">
+                  <div class="blog-card__main">
+                    <h4 class="blog-card__title">
+                      <a href="https://velog.io/@example/spring-transaction-boundary" target="_blank" rel="noopener noreferrer">
+                        Spring에서 트랜잭션 경계 잡기
+                      </a>
+                    </h4>
+                    <time class="blog-card__date mono" datetime="2025-03-02">2025.03.02</time>
+                    <ul class="blog-card__tags" aria-label="태그">
+                      <li><span class="blog-card__tag">Spring</span></li>
+                      <li><span class="blog-card__tag">JPA</span></li>
+                    </ul>
+                  </div>
+                  <a
+                    class="blog-card__ext"
+                    href="https://velog.io/@example/spring-transaction-boundary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Spring에서 트랜잭션 경계 잡기 — 외부에서 열기"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </article>
+              </li>
+              <li>
+                <article class="blog-card">
+                  <div class="blog-card__main">
+                    <h4 class="blog-card__title">
+                      <a href="https://velog.io/@example/docker-jvm-memory" target="_blank" rel="noopener noreferrer">
+                        Docker 컨테이너에서 JVM 메모리 설정 정리
+                      </a>
+                    </h4>
+                    <time class="blog-card__date mono" datetime="2025-02-18">2025.02.18</time>
+                    <ul class="blog-card__tags" aria-label="태그">
+                      <li><span class="blog-card__tag">Docker</span></li>
+                      <li><span class="blog-card__tag">Infra</span></li>
+                    </ul>
+                  </div>
+                  <a
+                    class="blog-card__ext"
+                    href="https://velog.io/@example/docker-jvm-memory"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Docker 컨테이너에서 JVM 메모리 설정 정리 — 외부에서 열기"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </article>
+              </li>
+              <li>
+                <article class="blog-card">
+                  <div class="blog-card__main">
+                    <h4 class="blog-card__title">
+                      <a href="https://velog.io/@example/jwt-refresh-flow" target="_blank" rel="noopener noreferrer">
+                        JWT + Refresh Token 흐름 노트
+                      </a>
+                    </h4>
+                    <time class="blog-card__date mono" datetime="2025-01-07">2025.01.07</time>
+                    <ul class="blog-card__tags" aria-label="태그">
+                      <li><span class="blog-card__tag">Security</span></li>
+                      <li><span class="blog-card__tag">JWT</span></li>
+                    </ul>
+                  </div>
+                  <a
+                    class="blog-card__ext"
+                    href="https://velog.io/@example/jwt-refresh-flow"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="JWT + Refresh Token 흐름 노트 — 외부에서 열기"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </article>
+              </li>
+              <li>
+                <article class="blog-card">
+                  <div class="blog-card__main">
+                    <h4 class="blog-card__title">
+                      <a href="https://velog.io/@example/mysql-index-explain" target="_blank" rel="noopener noreferrer">
+                        MySQL EXPLAIN으로 쿼리 플랜 읽기
+                      </a>
+                    </h4>
+                    <time class="blog-card__date mono" datetime="2024-12-12">2024.12.12</time>
+                    <ul class="blog-card__tags" aria-label="태그">
+                      <li><span class="blog-card__tag">MySQL</span></li>
+                      <li><span class="blog-card__tag">Performance</span></li>
+                    </ul>
+                  </div>
+                  <a
+                    class="blog-card__ext"
+                    href="https://velog.io/@example/mysql-index-explain"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="MySQL EXPLAIN으로 쿼리 플랜 읽기 — 외부에서 열기"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </article>
+              </li>
+            </ul>
+            <a
+              class="links-section__more"
+              href="https://velog.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="블로그 메인에서 더 많은 글 보기"
+            >
+              블로그 더 보기
+            </a>
+          </div>
+
+          <!-- TODO: 수정 필요 -->
+          <div class="links-section__panel">
+            <h3 class="links-section__panel-title mono">GitHub</h3>
+            <a
+              class="links-section__profile-btn"
+              href="https://github.com/8330000e"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub 프로필 페이지 열기"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.71.5.1.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.54 2.34 1.1 2.91.84.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"
+                />
+              </svg>
+              GitHub 프로필
+            </a>
+
+            <ul class="links-section__list links-section__list--repos">
+              <li>
+                <article class="gh-repo-card">
+                  <div class="gh-repo-card__top">
+                    <h4 class="gh-repo-card__name mono">
+                      <a href="https://github.com/8330000e/example/service-api" target="_blank" rel="noopener noreferrer">service-api</a>
+                    </h4>
+                    <div class="gh-repo-card__stats" aria-label="저장소 통계">
+                      <span class="gh-repo-card__stat">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linejoin="round" />
+                        </svg>
+                        <span class="mono">12</span>
+                      </span>
+                      <span class="gh-repo-card__stat">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <circle cx="18" cy="4" r="2" />
+                          <circle cx="6" cy="4" r="2" />
+                          <circle cx="12" cy="20" r="2" />
+                          <path d="M6 6v4a3 3 0 0 0 3 3h2a3 3 0 0 1 3 3v4M18 6v4a3 3 0 0 1-3 3h-2a3 3 0 0 0-3 3v4" stroke-linecap="round" />
+                        </svg>
+                        <span class="mono">3</span>
+                      </span>
+                    </div>
+                  </div>
+                  <p class="gh-repo-card__desc">예약·주문 도메인 REST API와 결제 연동 실습 프로젝트입니다.</p>
+                  <ul class="gh-repo-card__langs" aria-label="주요 언어">
+                    <li><span class="gh-lang">Java</span></li>
+                    <li><span class="gh-lang">Spring Boot</span></li>
+                  </ul>
+                </article>
+              </li>
+              <li>
+                <article class="gh-repo-card">
+                  <div class="gh-repo-card__top">
+                    <h4 class="gh-repo-card__name mono">
+                      <a href="https://github.com/8330000e/example/batch-worker" target="_blank" rel="noopener noreferrer">batch-worker</a>
+                    </h4>
+                    <div class="gh-repo-card__stats" aria-label="저장소 통계">
+                      <span class="gh-repo-card__stat">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linejoin="round" />
+                        </svg>
+                        <span class="mono">8</span>
+                      </span>
+                      <span class="gh-repo-card__stat">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <circle cx="18" cy="4" r="2" />
+                          <circle cx="6" cy="4" r="2" />
+                          <circle cx="12" cy="20" r="2" />
+                          <path d="M6 6v4a3 3 0 0 0 3 3h2a3 3 0 0 1 3 3v4M18 6v4a3 3 0 0 1-3 3h-2a3 3 0 0 0-3 3v4" stroke-linecap="round" />
+                        </svg>
+                        <span class="mono">1</span>
+                      </span>
+                    </div>
+                  </div>
+                  <p class="gh-repo-card__desc">Spring Batch로 일일 집계 잡을 구성한 샘플 레포입니다.</p>
+                  <ul class="gh-repo-card__langs" aria-label="주요 언어">
+                    <li><span class="gh-lang">Java</span></li>
+                    <li><span class="gh-lang">Gradle</span></li>
+                  </ul>
+                </article>
+              </li>
+              <li>
+                <article class="gh-repo-card">
+                  <div class="gh-repo-card__top">
+                    <h4 class="gh-repo-card__name mono">
+                      <a href="https://github.com/8330000e/example/infra-notes" target="_blank" rel="noopener noreferrer">infra-notes</a>
+                    </h4>
+                    <div class="gh-repo-card__stats" aria-label="저장소 통계">
+                      <span class="gh-repo-card__stat">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linejoin="round" />
+                        </svg>
+                        <span class="mono">5</span>
+                      </span>
+                      <span class="gh-repo-card__stat">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <circle cx="18" cy="4" r="2" />
+                          <circle cx="6" cy="4" r="2" />
+                          <circle cx="12" cy="20" r="2" />
+                          <path d="M6 6v4a3 3 0 0 0 3 3h2a3 3 0 0 1 3 3v4M18 6v4a3 3 0 0 1-3 3h-2a3 3 0 0 0-3 3v4" stroke-linecap="round" />
+                        </svg>
+                        <span class="mono">0</span>
+                      </span>
+                    </div>
+                  </div>
+                  <p class="gh-repo-card__desc">AWS·Docker 배포 메모와 스크립트를 모아 둔 문서형 레포입니다.</p>
+                  <ul class="gh-repo-card__langs" aria-label="주요 언어">
+                    <li><span class="gh-lang">Shell</span></li>
+                    <li><span class="gh-lang">Markdown</span></li>
+                  </ul>
+                </article>
+              </li>
+            </ul>
+
+            <p class="links-section__github-note">커밋 메시지와 README를 꾸준히 관리하고 있습니다</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section" aria-labelledby="contact-heading">
+      <div class="container contact__inner">
+        <h2 id="contact-heading" class="contact__title">Contact</h2>
+        <p class="contact__lead">
+          함께 성장할 팀을 찾고 있습니다. 편하게 연락 주세요.
+        </p>
+
+        <ul class="contact__channels">
+          <li class="contact__channel">
+            <span class="contact__channel-icon contact__channel-icon--mail" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </span>
+            <div class="contact__channel-body">
+              <span class="contact__channel-label">이메일</span>
+              <a
+                href="mailto:gyn38k@gmail.com"
+                class="contact__channel-link mono"
+                aria-label="이메일 gyn38k@gmail.com 보내기"
+              >
+                gyn38k@gmail.com
+              </a>
+            </div>
+          </li>
+          <li class="contact__channel">
+            <span class="contact__channel-icon contact__channel-icon--github" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.71.5.1.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.54 2.34 1.1 2.91.84.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"
+                />
+              </svg>
+            </span>
+            <div class="contact__channel-body">
+              <span class="contact__channel-label">GitHub</span>
+              <a
+                href="https://github.com/8330000e"
+                class="contact__channel-link mono"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub 프로필 github.com/8330000e 열기"
+              >
+                github.com/8330000e
+              </a>
+            </div>
+          </li>
+          <li class="contact__channel">
+            <span class="contact__channel-icon contact__channel-icon--blog" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2" />
+                <path d="M8 7h8M8 11h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </span>
+            <div class="contact__channel-body">
+              <span class="contact__channel-label">블로그</span>
+              <a
+                href="https://velog.io/@8330000e/posts"
+                class="contact__channel-link mono"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="기술 블로그 velog 글 목록 열기"
+              >
+                velog.io/@8330000e/posts
+              </a>
+            </div>
+          </li>
+        </ul>
+
+        <a
+          class="contact__resume"
+          href="./resume.pdf"
+          download
+          aria-label="이력서 PDF 파일 다운로드"
+        >
+          이력서 PDF 다운로드
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__copy mono">© 2026 김가연. Built with HTML/CSS/JS</p>
+    </div>
+  </footer>
+
+  <script src="./js/main.js" defer></script>
+  <script src="./js/scroll.js" defer></script>
+</body>
+</html>
