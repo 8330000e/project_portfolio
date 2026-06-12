@@ -5,26 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
   const navLinks = Array.from(document.querySelectorAll('[data-nav-link]'));
-  const main = document.querySelector('main');
+  const main = document.getElementById('main-content');
 
   const allMainSections = main ? Array.from(main.querySelectorAll('section')) : [];
 
   const STAGGER_SELECTOR = [
     '.skill-card',
     '.featured-card',
-    '.other-card',
+    '.work-row',
     '.ts-accordion__item',
-    '.blog-card',
-    '.gh-repo-card',
-    '.contact__channel',
-    '.contact__lead',
-    '.contact__resume',
-    '.arch-diagram',
-    '.arch-summary',
-    '.about__grid',
-    '.links-section__panel-title',
-    '.links-section__more',
-    '.links-section__profile-btn',
+    '.github-compact__profile',
+    '.github-compact__item',
+    '.contact-banner__eyebrow',
+    '.contact-banner__lead',
+    '.contact-banner__channel',
+    '.contact-banner__resume',
+    '.about__strip',
+    '.block__desc',
   ].join(', ');
 
   const setActiveHref = (hash) => {
@@ -33,11 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const getSectionContainer = (section) =>
+    section.querySelector('.block__body') ||
+    section.querySelector('.contact-banner__inner') ||
+    section.querySelector('.container');
+
   const initRevealTargets = () => {
     allMainSections.forEach((section) => {
       if (section.id === 'hero') return;
 
-      const container = section.querySelector('.container');
+      const container = getSectionContainer(section);
       if (!container) return;
 
       let order = 0;
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         h2.style.setProperty('--reveal-order', String(order++));
       }
 
-      const subtitle = container.querySelector('.ts-section__subtitle, .arch-section__subtitle');
+      const subtitle = container.querySelector('.block__desc');
       if (subtitle) {
         subtitle.classList.add('reveal');
         subtitle.style.setProperty('--reveal-order', String(order++));
@@ -77,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       {
         root: null,
-        rootMargin: '0px 0px -12% 0px',
-        threshold: [0, 0.06, 0.12, 0.18],
+        rootMargin: '0px 0px -10% 0px',
+        threshold: [0, 0.08, 0.15],
       }
     );
 
@@ -133,15 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
     else setActiveHref('');
   };
 
-  const updateNavScrolled = () => {
-    nav?.classList.toggle('scrolled', window.scrollY > 50);
-  };
-
   let scrollTicking = false;
   window.addEventListener(
     'scroll',
     () => {
-      updateNavScrolled();
       if (!scrollTicking) {
         requestAnimationFrame(() => {
           updateNavFromViewport();
@@ -186,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setupRevealObserver();
   }
 
-  updateNavScrolled();
   requestAnimationFrame(() => {
     updateNavFromViewport();
   });
