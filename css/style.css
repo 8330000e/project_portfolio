@@ -1127,6 +1127,7 @@ code,
 
 .contact-banner__channels {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem 2.5rem;
