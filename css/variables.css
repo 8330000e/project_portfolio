@@ -1,7 +1,7 @@
 :root {
   /* 심플 · 모던 · 쿨톤 — 가독성을 위해 명도 대비 강화 */
   --sidebar-w: 200px;
-  --content-max: 780px;
+  --content-max: 1000px;
 
   --color-bg: #f2f6f9;
   --color-bg-alt: #e6eff6;
