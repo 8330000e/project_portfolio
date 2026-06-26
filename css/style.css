@@ -327,7 +327,7 @@ code,
   gap: clamp(1rem, 3vw, 2rem);
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 6vw, 30rem);
 }
 
 .block__rail {
@@ -459,7 +459,8 @@ code,
 
 .about__fact {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-start;
   gap: 0.5rem;
   padding: 0.65rem 0.75rem;
   font-size: 0.84rem;
@@ -536,11 +537,15 @@ code,
 }
 
 .skill-card:nth-child(3) {
-  grid-column: span 2;
+  grid-column: span 3;
 }
 
 .skill-card:nth-child(4) {
-  grid-column: span 4;
+  grid-column: span 1;
+}
+
+.skill-card:nth-child(5) {
+  grid-column: span 2;
 }
 
 .skill-card__title {
@@ -587,11 +592,13 @@ code,
 }
 
 .skill-badge--main {
+  padding-top: 0.3rem;
   background: var(--color-accent);
   color: var(--color-on-accent);
 }
 
 .skill-badge--experience {
+  padding-top: 0.35rem;
   border: 1px solid var(--color-border-strong);
   color: var(--color-text-muted);
 }
@@ -647,7 +654,7 @@ code,
   margin: 0 0 0.2rem;
   font-family: var(--font-display);
   font-size: 1.05rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .featured-card__meta {
@@ -1019,7 +1026,7 @@ code,
 
 /* ── GitHub (compact) ── */
 .block__layout--compact {
-  padding: clamp(1.25rem, 3vw, 2rem) clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(1.25rem, 3vw, 2rem) clamp(1.5rem, 6vw, 30rem);
 }
 
 .block--compact .block__title {
