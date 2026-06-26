@@ -323,8 +323,8 @@
                 구민들이 탄소 배출을 줄이기 위한 다양한 서비스를 제공하는 커뮤니티 플랫폼입니다. Spring Boot 기반 API와 AWS 인프라를 활용해 안정적인 서비스를 제공합니다.
               </p>
               <ul class="featured-card__stack" aria-label="사용 기술">
-                <li><span class="featured-card__tag">Java</span></li>
                 <li><span class="featured-card__tag">Spring Boot</span></li>
+                <li><span class="featured-card__tag">React</span></li>
                 <li><span class="featured-card__tag" style="text-decoration: line-through;">Oracle</span></li>
                 <li><span class="featured-card__tag">MySQL</span></li>
                 <li><span class="featured-card__tag">AWS</span></li>
@@ -402,13 +402,14 @@
 
             <div class="featured-card__body">
               <p class="featured-card__lede">
-                학습 목적의 풀스택 앱으로, 사용자 요청을 신속히 처리하는 API를 제공합니다.
+                
               </p>
               <ul class="featured-card__stack" aria-label="사용 기술">
                 <li><span class="featured-card__tag">Spring Boot</span></li>
                 <li><span class="featured-card__tag">REST API</span></li>
-                <li><span class="featured-card__tag">Docker</span></li>
+                <li><span class="featured-card__tag">React</span></li>
                 <li><span class="featured-card__tag">MySQL</span></li>
+                <li><span class="featured-card__tag">Docker</span></li>
               </ul>
               <ul class="featured-card__bullets">
                 <li>JWT 기반 인증 및 사용자 CRUD API</li>
@@ -492,7 +493,7 @@
             >
               <span class="ts-accordion__badge mono" aria-hidden="true">API</span>
               <span class="ts-accordion__head-main">
-                <span class="ts-accordion__head-title">REST API 예외 응답 형식 통일</span>
+                <span class="ts-accordion__head-title">REST API 응답 형식 통일</span>
                 <span class="ts-accordion__tech" aria-label="관련 기술">
                   <span class="ts-accordion__chip">Spring Boot</span>
                   <span class="ts-accordion__chip">REST</span>
@@ -516,23 +517,23 @@
                 <div class="ts-accordion__block">
                   <p class="ts-accordion__label">문제 상황</p>
                   <p class="ts-accordion__copy">
-                    API마다 오류 응답 형식이 달라 프론트엔드에서 예외 처리가 어려웠습니다.
+                    API 호출시 매핑 주소가 /api/api/로 중복되거나, 예외 발생 시 상태 코드와 메시지 구조가 일관되지 않아 클라이언트 연동이 어려웠습니다.
                   </p>
                 </div>
                 <div class="ts-accordion__block">
                   <p class="ts-accordion__label">원인 분석</p>
-                  <p class="ts-accordion__copy">컨트롤러·서비스마다 예외를 개별 처리해 상태 코드와 메시지 구조가 일관되지 않았습니다.</p>
+                  <p class="ts-accordion__copy">프론트엔드 axios 호출 경로와 백엔드 API 호출 구조가 일관되지 않았습니다.</p>
                 </div>
                 <div class="ts-accordion__block">
                   <p class="ts-accordion__label">해결 방법</p>
                   <p class="ts-accordion__copy">
-                    <code class="mono">@RestControllerAdvice</code>로 공통 예외 핸들러를 두고, 에러 코드·메시지·HTTP 상태를 표준 형식으로 맞췄습니다.
+                    CloudFront 배포 도메인을 CORS 허용 목록에 추가하고, /api URI Prefix를 적용하여 API 경로를 일관되게 구성함으로써 배포 환경에서 발생한 API 통신 문제를 해결했습니다.
                   </p>
                 </div>
                 <div class="ts-accordion__block">
                   <p class="ts-accordion__label">결과 / 배운 점</p>
                   <p class="ts-accordion__copy">
-                    클라이언트 연동이 수월해졌고, API 설계 단계에서 응답 스펙을 먼저 정의하는 것이 중요하다고 느꼈습니다.
+                    API 호출 경로와 예외 응답 형식을 통일하여 클라이언트 연동이 원활해졌습니다. 또한, API 설계 시 URI 구조와 예외 처리 방식을 일관되게 유지하는 것이 중요하다는 점을 배웠습니다.
                   </p>
                 </div>
               </div>
@@ -549,10 +550,9 @@
             >
               <span class="ts-accordion__badge mono" aria-hidden="true">배포</span>
               <span class="ts-accordion__head-main">
-                <span class="ts-accordion__head-title">Docker 컨테이너 메모리 이슈</span>
+                <span class="ts-accordion__head-title">nginx.conf </span>
                 <span class="ts-accordion__tech" aria-label="관련 기술">
                   <span class="ts-accordion__chip">Docker</span>
-                  <span class="ts-accordion__chip">JVM</span>
                   <span class="ts-accordion__chip">Linux</span>
                 </span>
               </span>
@@ -786,29 +786,30 @@
                   <li class="github-compact__item">
                     <a
                       class="github-compact__repo mono"
-                      href="https://github.com/8330000e/example/service-api"
+                      href="https://github.com/8330000e/k3s"
                       target="_blank"
                       rel="noopener noreferrer"
-                    >service-api</a>
-                    <span class="github-compact__meta">Java · Spring Boot</span>
+                    >k3s</a>
+                    <span class="github-compact__meta">Kubernetes</span>
                   </li>
                   <li class="github-compact__item">
                     <a
                       class="github-compact__repo mono"
-                      href="https://github.com/8330000e/example/batch-worker"
+                      href="https://github.com/8330000e/react_todo"
                       target="_blank"
                       rel="noopener noreferrer"
-                    >batch-worker</a>
-                    <span class="github-compact__meta">Java · Gradle</span>
+                    >react_todo
+                  </a>
+                    <span class="github-compact__meta">JavaScript · React</span>
                   </li>
                   <li class="github-compact__item">
                     <a
                       class="github-compact__repo mono"
-                      href="https://github.com/8330000e/example/infra-notes"
+                      href="https://github.com/8330000e/board-app-github-actions"
                       target="_blank"
                       rel="noopener noreferrer"
-                    >infra-notes</a>
-                    <span class="github-compact__meta">Shell · Markdown</span>
+                    >board-app-github-actions</a>
+                    <span class="github-compact__meta">AWS · GitHub Actions</span>
                   </li>
                 </ul>
               </div>
