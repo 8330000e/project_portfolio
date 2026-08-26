@@ -388,21 +388,6 @@
           </div>
 
           <div class="debug-item">
-            <button type="button" class="debug-trigger" aria-expanded="false" aria-controls="debug-panel-2">
-              <span class="debug-badge">배포</span>
-              <span class="debug-title">nginx.conf / OOM 컨테이너 재시작</span>
-              <span class="debug-chips"><span>Docker</span><span>Linux</span></span>
-              <span class="debug-chevron" aria-hidden="true">▼</span>
-            </button>
-            <div id="debug-panel-2" class="debug-panel" hidden>
-              <div class="debug-block"><p class="debug-label">문제 상황</p><p>배포 후 컨테이너가 간헐적으로 재시작되거나 OOM으로 종료되었습니다.</p></div>
-              <div class="debug-block"><p class="debug-label">원인 분석</p><p>컨테이너 할당 메모리 대비 JVM 힙 설정이 과하고, 피크 시 RSS가 한계를 넘었습니다.</p></div>
-              <div class="debug-block"><p class="debug-label">해결 방법</p><p>Docker 메모리 제한과 힙/메타공간 플래그를 정렬했고 필요 시 배치 크기·캐시 상한도 조정했습니다.</p></div>
-              <div class="debug-block"><p class="debug-label">결과 / 배운 점</p><p>운영 환경에서 리소스 캡과 JVM 옵션을 함께 설계해야 한다고 정리했습니다.</p></div>
-            </div>
-          </div>
-
-          <div class="debug-item">
             <button type="button" class="debug-trigger" aria-expanded="false" aria-controls="debug-panel-3">
               <span class="debug-badge">배포</span>
               <span class="debug-title">배포 환경 변수 불일치</span>
@@ -432,7 +417,7 @@
             </div>
           </div>
 
-          <div class="debug-item">
+          <!-- <div class="debug-item">
             <button type="button" class="debug-trigger" aria-expanded="false" aria-controls="debug-panel-5">
               <span class="debug-badge">성능</span>
               <span class="debug-title">API 응답속도 개선 (인덱스 최적화)</span>
@@ -445,7 +430,7 @@
               <div class="debug-block"><p class="debug-label">해결 방법</p><p>EXPLAIN으로 플랜을 확인 후 정렬·필터 순서에 맞는 인덱스를 추가하고, 불필요한 SELECT 컬럼을 줄였습니다.</p></div>
               <div class="debug-block"><p class="debug-label">결과 / 배운 점</p><p>기능 추가 시 쿼리 플랜 리뷰를 습관화하면 회귀를 줄일 수 있다고 정리했습니다.</p></div>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
 
@@ -488,11 +473,6 @@
             <svg><use href="#mail"></use></svg>
             <span>이메일</span>
             <strong>gyn38k@gmail.com</strong>
-          </a>
-          <a href="https://github.com/8330000e" target="_blank" rel="noopener noreferrer">
-            <svg><use href="#git"></use></svg>
-            <span>GitHub</span>
-            <strong>github.com/8330000e</strong>
           </a>
           <a href="https://open.kakao.com/o/spJOTSAi" target="_blank" rel="noopener noreferrer">
             <svg><use href="#chat"></use></svg>
