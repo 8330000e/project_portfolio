@@ -1,51 +1,111 @@
 'use strict';
 
+/**
+ * 김가연 Portfolio — 메인 스크립트
+ * 1. 모바일 메뉴 토글
+ * 2. 스크롤 시 네비게이션 active 상태
+ * 3. Debug 섹션 아코디언
+ */
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+
+/* ── 모바일 메뉴 ── */
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('open');
+    menuToggle.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', '메뉴 열기');
+    });
+  });
+}
+
+/* ── 스크롤 네비게이션 active ── */
+const activateNav = () => {
+  const scrollPosition = window.scrollY + 140;
+  const pageHeight = document.documentElement.scrollHeight;
+  const isAtBottom = window.innerHeight + window.scrollY >= pageHeight - 8;
+
+  if (isAtBottom) {
+    const lastSection = sections[sections.length - 1];
+    const lastSectionId = lastSection.getAttribute('id');
+    navLinks.forEach((link) => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${lastSectionId}`);
+    });
+    return;
+  }
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute('id');
+
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      navLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
+      });
+    }
+  });
+};
+
+window.addEventListener('scroll', activateNav);
+window.addEventListener('hashchange', () => {
+  const currentHash = window.location.hash;
+  navLinks.forEach((link) => {
+    link.classList.toggle('active', link.getAttribute('href') === currentHash);
+  });
+});
+window.addEventListener('load', activateNav);
+
+/* ── Debug 아코디언 ── */
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.getElementById('ts-accordion');
-  if (!root) return;
+  const accordion = document.getElementById('debug-accordion');
+  if (!accordion) return;
 
-  const setBtnLabel = (btn, expanded) => {
-    const title =
-      btn.querySelector('.ts-accordion__head-title')?.textContent?.replace(/\s+/g, ' ').trim() ||
-      '항목';
-    btn.setAttribute('aria-label', expanded ? `${title}, 상세 내용 접기` : `${title}, 상세 내용 펼치기`);
-  };
-
-  const collapse = (item) => {
-    const btn = item.querySelector('.ts-accordion__trigger');
+  const collapseItem = (item) => {
+    const btn = item.querySelector('.debug-trigger');
     const panelId = btn?.getAttribute('aria-controls');
     const panel = panelId ? document.getElementById(panelId) : null;
     if (!btn || !panel) return;
+
     btn.setAttribute('aria-expanded', 'false');
-    setBtnLabel(btn, false);
     panel.hidden = true;
     item.classList.remove('is-open');
   };
 
-  const expand = (item) => {
-    const btn = item.querySelector('.ts-accordion__trigger');
+  const expandItem = (item) => {
+    const btn = item.querySelector('.debug-trigger');
     const panelId = btn?.getAttribute('aria-controls');
     const panel = panelId ? document.getElementById(panelId) : null;
     if (!btn || !panel) return;
+
     btn.setAttribute('aria-expanded', 'true');
-    setBtnLabel(btn, true);
     panel.hidden = false;
     item.classList.add('is-open');
   };
 
-  root.querySelectorAll('.ts-accordion__trigger').forEach((btn) => {
-    setBtnLabel(btn, false);
-
+  accordion.querySelectorAll('.debug-trigger').forEach((btn) => {
     btn.addEventListener('click', () => {
-      const item = btn.closest('.ts-accordion__item');
-      if (!item || !root.contains(item)) return;
+      const item = btn.closest('.debug-item');
+      if (!item) return;
 
-      const opened = btn.getAttribute('aria-expanded') === 'true';
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
 
-      root.querySelectorAll('.ts-accordion__item').forEach(collapse);
+      accordion.querySelectorAll('.debug-item').forEach(collapseItem);
 
-      if (!opened) {
-        expand(item);
+      if (!isOpen) {
+        expandItem(item);
       }
     });
   });
