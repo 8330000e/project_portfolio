@@ -405,15 +405,15 @@
           <div class="debug-item">
             <button type="button" class="debug-trigger" aria-expanded="false" aria-controls="debug-panel-4">
               <span class="debug-badge">보안</span>
-              <span class="debug-title">JWT 토큰 만료 처리 로직</span>
+              <span class="debug-title">JWT 토큰 만료 자동 처리 및 전역 예외 핸들링</span>
               <span class="debug-chips"><span>JWT</span><span>Spring Security</span></span>
               <span class="debug-chevron" aria-hidden="true">▼</span>
             </button>
             <div id="debug-panel-4" class="debug-panel" hidden>
-              <div class="debug-block"><p class="debug-label">문제 상황</p><p>액세스 토큰 만료 후 예상치 않은 401 연속 발생 또는 무한 리프레시가 보고되었습니다.</p></div>
-              <div class="debug-block"><p class="debug-label">원인 분석</p><p>클라이언트 재요청 타이밍과 서버 검증 순서가 엇갈렸고, 리프레시 토큰 재발급 정책이 일관되지 않았습니다.</p></div>
-              <div class="debug-block"><p class="debug-label">해결 방법</p><p>만료·블랙리스트·단일 디바이스 정책 등을 명확히 하고 재발급 API와 예외 처리 흐름을 정리했습니다.</p></div>
-              <div class="debug-block"><p class="debug-label">결과 / 배운 점</p><p>인증은 API 스펙뿐 아니라 클라이언트 동선까지 포함해 설계해야 한다는 점을 배웠습니다.</p></div>
+              <div class="debug-block"><p class="debug-label">문제 상황</p><p>JWT 토큰 만료 후 클라이언트에서 예외 처리가 되지 않아 연속적인 인증 에러(401/403) 및 화면 먹통 현상이 발생했습니다.</p></div>
+              <div class="debug-block"><p class="debug-label">원인 분석</p><p>Axios 요청 시 만료된 토큰이 헤더에 계속 실려 전송되었고, 백엔드의 만료 응답에 대응하는 전역 인터셉터가 부재했습니다.</p></div>
+              <div class="debug-block"><p class="debug-label">해결 방법</p><p><code>main.jsx</code>에 전역 Axios 인터셉터를 설정하여 API 요청 시 JWT를 자동 첨부하고, 만료(401/403) 시 스토어 초기화 및 메인 리다이렉트를 구현했습니다.</p></div>
+              <div class="debug-block"><p class="debug-label">결과 / 배운 점</p><p>컴포넌트별 개별 처리 대신 전역 인터셉터를 활용해 중앙 집중식 인증 관리 구조를 구축하는 것의 중요성을 배웠습니다.</p></div>
             </div>
           </div>
 
