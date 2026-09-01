@@ -173,11 +173,11 @@ header {
 /* ── Page shell ── */
 .page-shell {
   display: grid;
-  grid-template-columns: 340px minmax(0, 1fr);
+  grid-template-columns: 300px minmax(0, 1fr);
   gap: 28px;
   max-width: 1140px;
   margin: 0 auto;
-  padding: 20px 24px 0;
+  padding: 40px 24px 0;
   word-break: keep-all;
 }
 
@@ -240,12 +240,14 @@ h1 {
 h2 {
   margin-bottom: 0;
   font-size: clamp(1.55rem, 3vw, 2.15rem);
-  line-height: 1.2;
+  line-height: 1;
 }
 
-.section-title {
+.profile-title {
   font-size: 1.5rem;
   font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 18px;
 }
 
 h3 {
@@ -554,7 +556,7 @@ h3 {
 
 .stack-matrix article {
   min-height: 204px;
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1018,7 +1020,7 @@ h3 {
   }
 
   .featured-card__head {
-    grid-template-columns: 84px 1fr;
+    grid-template-columns: 100px 1fr;
   }
 
   .featured-card__links {
