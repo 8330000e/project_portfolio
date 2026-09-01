@@ -412,7 +412,7 @@
             <div id="debug-panel-4" class="debug-panel" hidden>
               <div class="debug-block"><p class="debug-label">문제 상황</p><p>JWT 토큰 만료 후 클라이언트에서 예외 처리가 되지 않아 연속적인 인증 에러(401/403) 및 화면 먹통 현상이 발생했습니다.</p></div>
               <div class="debug-block"><p class="debug-label">원인 분석</p><p>Axios 요청 시 만료된 토큰이 헤더에 계속 실려 전송되었고, 백엔드의 만료 응답에 대응하는 전역 인터셉터가 부재했습니다.</p></div>
-              <div class="debug-block"><p class="debug-label">해결 방법</p><p><code>main.jsx</code>에 전역 Axios 인터셉터를 설정하여 API 요청 시 JWT를 자동 첨부하고, 만료(401/403) 시 스토어 초기화 및 메인 리다이렉트를 구현했습니다.</p></div>
+              <div class="debug-block"><p class="debug-label">해결 방법</p><p><pre class="code-box"><code>main.jsx</code></pre>에 전역 Axios 인터셉터를 설정하여 API 요청 시 JWT를 자동 첨부하고, 만료(401/403) 시 스토어 초기화 및 메인 리다이렉트를 구현했습니다.</p></div>
               <div class="debug-block"><p class="debug-label">결과 / 배운 점</p><p>컴포넌트별 개별 처리 대신 전역 인터셉터를 활용해 중앙 집중식 인증 관리 구조를 구축하는 것의 중요성을 배웠습니다.</p></div>
             </div>
           </div>

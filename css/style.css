@@ -1090,6 +1090,15 @@ h3 {
   .debug-chips {
     grid-column: 1 / -1;
   }
+
+  .code-box {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 16px;
+    border-radius: 8px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    overflow-x: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
