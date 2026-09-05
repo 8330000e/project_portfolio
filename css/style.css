@@ -178,11 +178,11 @@ header {
   max-width: 1140px;
   margin: 0 auto;
   padding: 40px 24px 0;
-  word-break: keep-all;
 }
 
 .profile-rail {
   position: sticky;
+  top: 40px;
   height: max-content;
 }
 
